@@ -8,3 +8,15 @@ sudo sysctl -w vm.max_map_count=262144
 # see https://askubuntu.com/questions/1029250/ubuntu-18-04-ethernet-disconnected-after-suspend
 sudo  modprobe -r r8169 # remove
 sudo  modprobe -i r8169 # install again, ignoring existing installation
+
+alias vi=vim
+alias ls="ls -lah"
+alias ipy="ipython"
+alias k="kubectl"
+  
+
+pull(){
+        echo Fetching PR "$1";
+        git fetch upstream "pull/$1/head:pr/$1";
+        git checkout "pr/$1";
+}

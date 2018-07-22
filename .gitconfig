@@ -1,0 +1,31 @@
+[alias]
+	co = checkout
+	st = status
+	commint = commit
+	lost = stash
+        found = stash pop
+        overit = stash clear
+        in = add
+        out = rm
+        find = grep
+        wasted = reset HEAD
+        fuckedup = reset --hard
+        with = merge
+        real = rebase
+        m = checkout master
+        this = checkout
+        that = checkout -
+        meow = status
+        wtf = status
+        what = diff
+        huh = diff
+        bah = blame
+	eh = config --get-regexp alias
+	pr-clean = "!git checkout master ; git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+[user]
+	name = Miroslav Batchkarov
+	email = mbatchkarov@gmail.com 
+[core]
+	autocrlf = input
+[remote "origin"]
+	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
