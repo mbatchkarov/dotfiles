@@ -6,4 +6,5 @@ sudo sysctl -w vm.max_map_count=262144
 
 # ubuntu 18.04 can't connect to ethernet unless driver is reloaded
 # see https://askubuntu.com/questions/1029250/ubuntu-18-04-ethernet-disconnected-after-suspend
-sudo  modprobe -i r8169
+sudo  modprobe -r r8169 # remove
+sudo  modprobe -i r8169 # install again, ignoring existing installation
