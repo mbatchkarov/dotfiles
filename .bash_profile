@@ -20,3 +20,7 @@ pull(){
         git fetch upstream "pull/$1/head:pr/$1";
         git checkout "pr/$1";
 }
+
+prune(){
+   git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d
+}
